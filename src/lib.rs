@@ -18,6 +18,7 @@ use vfscore::{
 };
 
 mod null;
+mod rtc;
 mod sdx;
 mod shm;
 mod tty;
@@ -74,6 +75,7 @@ impl DevDir {
         map.insert("null", Arc::new(null::Null));
         map.insert("zero", Arc::new(zero::Zero));
         map.insert("shm", Arc::new(shm::Shm));
+        map.insert("rtc", Arc::new(rtc::Rtc));
         // map.insert("tty", Arc::new(stdout::Stdout));
 
         Self { map }
